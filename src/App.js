@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const messages = [
@@ -7,7 +7,15 @@ const messages = [
   "Invest your new income wisely🏠",
 ];
 function App() {
-  const step = 1;
+  const [step, setStep] = useState(1);
+
+  function handlePrevious() {
+    setStep(step - 1);
+  }
+  function handleNext() {
+    setStep(step + 1);
+  }
+
   return (
     <>
       <div className="steps">
