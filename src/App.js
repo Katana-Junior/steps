@@ -26,10 +26,16 @@ function App() {
         </div>
         <p className="messages">{messages[step - 1]}</p>
         <div className="buttons">
-          <button style={{ color: "#fff", backgroundColor: "#7950f2" }}>
+          <button
+            style={{ color: "#fff", backgroundColor: "#7950f2" }}
+            onClick={handlePrevious}
+          >
             Previous
           </button>
-          <button style={{ color: "#fff", backgroundColor: "#7950f2" }}>
+          <button
+            style={{ color: "#fff", backgroundColor: "#7950f2" }}
+            onClick={handleNext}
+          >
             Next
           </button>
         </div>
