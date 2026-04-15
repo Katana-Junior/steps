@@ -11,10 +11,14 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
-    setStep(step - 1);
+    if (step > 1) {
+      setStep(step - 1);
+    }
   }
   function handleNext() {
-    setStep(step + 1);
+    if (step < 3) {
+      setStep(step + 1);
+    }
   }
 
   return (
@@ -50,6 +54,7 @@ function App() {
             <button
               style={{ color: "#fff", backgroundColor: "#7950f2" }}
               onClick={handleNext}
+              
             >
               Next
             </button>
