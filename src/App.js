@@ -6,18 +6,27 @@ const messages = [
   "Apply for jobs💼",
   "Invest your new income wisely🏠",
 ];
-function App() {
+export default function App() {
+  return (
+    <>
+      <Steps />
+      <Steps />
+    </>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
     if (step > 1) {
-      setStep(step - 1);
+      setStep((currentStep) => currentStep - 1);
     }
   }
   function handleNext() {
     if (step < 3) {
-      setStep(step + 1);
+      setStep((currentStep) => currentStep + 1);
     }
   }
 
@@ -32,7 +41,7 @@ function App() {
           border: "none",
           cursor: "pointer",
         }}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen((isOpen) => !isOpen)}
       >
         &times;
       </button>
@@ -54,7 +63,6 @@ function App() {
             <button
               style={{ color: "#fff", backgroundColor: "#7950f2" }}
               onClick={handleNext}
-              
             >
               Next
             </button>
@@ -64,5 +72,3 @@ function App() {
     </>
   );
 }
-
-export default App;
